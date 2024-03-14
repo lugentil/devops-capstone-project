@@ -87,7 +87,7 @@ def read_an_account(id):
     app.logger.info("Request to read an Account with id: %s", id)
     account = Account.find(id)
     if not account:
-        abort(status.HTTP_404_NOT_FOUND, f"Account with id [{id}] could not be found.")    
+        abort(status.HTTP_404_NOT_FOUND, f"Account with id [{id}] could not be found.")
     return account.serialize(), status.HTTP_200_OK
 
 
