@@ -57,11 +57,10 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
-
-# ... place you code here to LIST accounts ...
 @app.route("/accounts", methods=["GET"])
 def list_accounts():
     """
@@ -75,11 +74,10 @@ def list_accounts():
     app.logger.info("Returning [%s] accounts", len(account_list))
     return jsonify(account_list), status.HTTP_200_OK
 
+
 ######################################################################
 # READ AN ACCOUNT
 ######################################################################
-
-# ... place you code here to READ an account ...
 @app.route("/accounts/<int:id>", methods=["GET"])
 def read_an_account(id):
     """
@@ -97,8 +95,6 @@ def read_an_account(id):
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
-
-# ... place you code here to UPDATE an account ...
 @app.route("/accounts/<int:id>", methods=["PUT"])
 def update_account(id):
     """
@@ -117,8 +113,6 @@ def update_account(id):
 ######################################################################
 # DELETE AN ACCOUNT
 ######################################################################
-
-# ... place you code here to DELETE an account ...
 @app.route("/accounts/<int:id>", methods=["DELETE"])
 def delete_account(id):
     """
@@ -130,7 +124,6 @@ def delete_account(id):
         account.delete()
     
     return "", status.HTTP_204_NO_CONTENT
-
 
 
 ######################################################################
