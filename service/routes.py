@@ -88,7 +88,6 @@ def read_an_account(id):
     account = Account.find(id)
     if not account:
         abort(status.HTTP_404_NOT_FOUND, f"Account with id [{id}] could not be found.")    
-        
     return account.serialize(), status.HTTP_200_OK
 
 
@@ -122,7 +121,6 @@ def delete_account(id):
     account = Account.find(id)
     if account:
         account.delete()
-    
     return "", status.HTTP_204_NO_CONTENT
 
 
